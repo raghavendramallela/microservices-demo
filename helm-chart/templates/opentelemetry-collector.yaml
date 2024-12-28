@@ -69,7 +69,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: busybox:latest@sha256:768e5c6f5cb6db0794eec98dc7a967f40631746c32232b78a3105fb946f3ab83
+        image: busybox:latest@sha256:2919d0172f7524b2d8df9e50066a682669e6d170ac0f6a49676d54358fe970b5
         command:
         - '/bin/sh'
         - '-c'
@@ -94,7 +94,7 @@ spec:
           readOnlyRootFilesystem: true
         args:
         - --config=/conf/collector-gateway-config.yaml
-        image: otel/opentelemetry-collector-contrib:0.113.0@sha256:5ac3e0ba2b0bd00943d067e7d8c262fd75cbe85878e59fb9879cd3eb481c69ee
+        image: otel/opentelemetry-collector-contrib:0.115.1@sha256:d2da12c4336a79758826700be9e21ecf4a9f7d945b7f8a58ba55ee3fa45427c8
         volumeMounts:
         - name: collector-gateway-config
           mountPath: /conf

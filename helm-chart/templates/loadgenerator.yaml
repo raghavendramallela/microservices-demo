@@ -92,7 +92,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: busybox:latest@sha256:768e5c6f5cb6db0794eec98dc7a967f40631746c32232b78a3105fb946f3ab83
+        image: busybox:latest@sha256:2919d0172f7524b2d8df9e50066a682669e6d170ac0f6a49676d54358fe970b5
         env:
         - name: FRONTEND_ADDR
           value: "{{ .Values.frontend.name }}:80"
@@ -112,6 +112,8 @@ spec:
           value: "{{ .Values.frontend.name }}:80"
         - name: USERS
           value: "10"
+        - name: RATE
+          value: "1"
         resources:
           {{- toYaml .Values.loadGenerator.resources | nindent 10 }}
 {{- if .Values.networkPolicies.create }}
